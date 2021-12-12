@@ -1,5 +1,6 @@
 package com.example.DAO_Layer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -11,8 +12,10 @@ import java.util.List;
 
 @Repository
 public class CustomersRepository {
+    @Autowired
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-    private final String productName = read("src/main/resources/data.sql");
+
+    private final String productName = read("src/main/resources/script.sql");
 
     public CustomersRepository(NamedParameterJdbcTemplate namedParameterJdbcTemplate) throws IOException {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;

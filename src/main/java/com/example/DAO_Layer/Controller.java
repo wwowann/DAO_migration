@@ -16,7 +16,7 @@ public class Controller {
     }
 
     @GetMapping("/products/fetch-product")
-    public List<String> getListProductName(@RequestParam ("name")  String name) throws IOException {
+    public List<String> getListProductName(String name) throws IOException {
         return repository.getProductName(name);
     }
 }
