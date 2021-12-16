@@ -1,9 +1,12 @@
+create schema data_base;
+
 create table CUSTOMERS (
     id int not null auto_increment primary key,
     name varchar(15),
     surname varchar(15),
     age int,
-    phone_number int
+    phone_number int,
+    city_of_living varchar(20)
 );
 
 create table ORDERS (
@@ -14,3 +17,4 @@ create table ORDERS (
   amount int,
   foreign key (customer_id) references CUSTOMERS(id)
 );
+
