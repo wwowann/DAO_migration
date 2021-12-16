@@ -35,7 +35,7 @@ public class CustomersRepository {
         }
     }
 
-    public List<String> getProductName(String name) throws IOException {
+    public List<String> getProductName(String name){
         return namedParameterJdbcTemplate.queryForList(productName,
                 new MapSqlParameterSource("name", name), String.class);
     }
